@@ -145,7 +145,7 @@ form {
 .form-check {
 	position: relative;
 	overflow: hidden;
-	margin:0 0 1em;
+	margin:0 0 0.5em;
 }
 
 .form-check input {
@@ -158,8 +158,8 @@ form {
 
 .form-check label {
 	color:#111;
-	font-size:1.2em;
-	padding:0.5em 1em;
+	font-size:0.9em;
+	padding:0.65em 0.85em;
 	display: block;
 	border:2px solid #ccc;
 	border-radius: 10px;
