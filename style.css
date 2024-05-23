@@ -95,6 +95,12 @@ body {
   	font-style: normal;
 }
 
+@media(max-width:700px) {
+	body {
+		padding:1em;
+	}
+}
+
 body > * {
 	max-width: 700px;
 	margin-left:auto;
@@ -195,6 +201,20 @@ form {
 	transform: scale(1);
 	transition: all 1s ease-in-out;
 	cursor: pointer;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-left:-25%;
+	margin-top:-25%;
+}
+
+@media(max-width:700px) {
+
+	#form-gift {
+		margin-left:-40%;
+		margin-top:-40%;
+		width:80%;
+	}
 }
 
 #form-gift.revealed {
@@ -222,6 +242,7 @@ form {
 	opacity: 0;
 	font-size: 40px;
 	position: absolute;
+	line-height: 1.1;
 	  top: 0;
 	  left: 0;
 	  right: 0;
