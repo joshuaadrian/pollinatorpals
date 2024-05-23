@@ -1,20 +1,31 @@
+const form = document.querySelector('#form-survey');
 const next = document.querySelector('#form-next');
 const submit = document.querySelector('#form-submit');
 const tabs = document.querySelector('#form-tabs');
 const pal = document.querySelector('#form-pal');
 const palImage = document.querySelector('#form-pal-image');
 const palCopy = document.querySelector('#form-pal-copy');
+const palTitle = document.querySelector('#form-pal-title');
+const palDescription = document.querySelector('#form-pal-description');
 const gift = document.querySelector('#form-gift');
 const progress = document.querySelectorAll('#form-progress span');
 const inputs = document.querySelectorAll('.form-check-input');
 let pals = {
-	'bee' : 1,
-	'bee' : 1,
-	'bee' : 1,
-	'bee' : 1,
-	'bee' : 1,
-	'bee' : 1
+	'butterfly' : {
+		'title' : 'You\'re a Butterfly',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'butterfly.png'
+	},
+	'bee' : {},
+	'wasp' : {},
+	'moth' : {},
+	'bat' : {},
+	'hummingbird' : {}
 };
+
+let beeCount = 0;
+let butterflyCount = 0;
+let mothCount = 0;
 
 if (next) {
 	next.addEventListener('click', (e) => {
@@ -36,13 +47,45 @@ if (next) {
 	});
 }
 
+let whichPal = function() {
+
+	let data = new FormData(form);
+	let arr = [];
+
+	data.forEach(function(value) {
+	  arr.push(value);
+	});
+
+	obj = {};
+	let el,
+    max = 0;
+	for (let i = 0; i < arr.length; i++) {
+    	if (!obj[arr[i]]) obj[arr[i]] = 1;
+    	else obj[arr[i]]++;
+	}
+
+	for (const i in obj) {
+	    if (max < obj[i]) {
+	        max = obj[i];
+	        el = i;
+	    }
+	}
+
+	return el;
+
+};
+
 if (gift) {
 	gift.addEventListener('click', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
+		
+		let selectedPal = whichPal();
+
 		gift.classList.add('revealed');
-		palImage.style.backgroundImage = 'url(butterfly.png)';
-		palCopy.innerHTML = 'You\'re a Butterfly!';
+		palImage.style.backgroundImage = 'url('+pals[selectedPal].image+')';
+		palTitle.innerHTML = pals[selectedPal].title;
+		palDescription.innerHTML = pals[selectedPal].description;
 		pal.classList.add('revealed');
 		submit.disabled = true;
 	});
@@ -53,9 +96,13 @@ if (submit) {
 	submit.addEventListener('click', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
+
+		let selectedPal = whichPal();
+
 		gift.classList.add('revealed');
-		palImage.style.backgroundImage = 'url(butterfly.png)';
-		palCopy.innerHTML = 'You\'re a Butterfly!';
+		palImage.style.backgroundImage = 'url('+pals[selectedPal].image+')';
+		palTitle.innerHTML = pals[selectedPal].title;
+		palDescription.innerHTML = pals[selectedPal].description;
 		pal.classList.add('revealed');
 		submit.disabled = true;
 	});
