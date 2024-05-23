@@ -16,11 +16,36 @@ let pals = {
 		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
 		'image' : 'butterfly.png'
 	},
-	'bee' : {},
-	'wasp' : {},
-	'moth' : {},
-	'bat' : {},
-	'hummingbird' : {}
+	'bee' : {
+		'title' : 'You\'re a Bee',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'bee.png'
+	},
+	'wasp' : {
+		'title' : 'You\'re a Wasp',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'wasp.png'
+	},
+	'moth' : {
+		'title' : 'You\'re a Moth',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'moth.png'
+	},
+	'bat' : {
+		'title' : 'You\'re a Bat',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'bat.png'
+	},
+	'hummingbird' : {
+		'title' : 'You\'re a Hummingbird',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'hummingbird.png'
+	},
+	'fly' : {
+		'title' : 'You\'re a Fly',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'fly.png'
+	}
 };
 
 let beeCount = 0;
@@ -79,7 +104,7 @@ if (gift) {
 	gift.addEventListener('click', (e) => {
 		e.preventDefault();
 		e.stopPropagation();
-		
+
 		let selectedPal = whichPal();
 
 		gift.classList.add('revealed');
