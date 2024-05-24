@@ -45,6 +45,16 @@ let pals = {
 		'title' : 'You\'re a Fly',
 		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
 		'image' : 'fly.png'
+	},
+	'beetle' : {
+		'title' : 'You\'re a Beetle',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'fly.png'
+	},
+	'snail' : {
+		'title' : 'You\'re a Snail',
+		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
+		'image' : 'fly.png'
 	}
 };
 
