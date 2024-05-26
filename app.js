@@ -54,7 +54,7 @@ let pals = {
 	'snail' : {
 		'title' : 'You\'re a Snail',
 		'description' : 'Ut sed et ut sed. Alias quod omnis reiciendis at quam quas et cumque amet rerum.',
-		'image' : 'fly.png'
+		'image' : 'snail.png'
 	}
 };
 
@@ -74,6 +74,7 @@ if (next) {
 		if ( next.dataset.current >= 4 ) {
 			next.style.display = 'none';
 			submit.style.display = 'block';
+			gift.classList.add('is-showing');
 		} else {
 			next.dataset.current = parseInt(next.dataset.current) + 1;
 			next.disabled = true;
@@ -118,7 +119,7 @@ if (gift) {
 		let selectedPal = whichPal();
 
 		gift.classList.add('revealed');
-		palImage.style.backgroundImage = 'url('+pals[selectedPal].image+')';
+		palImage.setAttribute('src',pals[selectedPal].image);
 		palTitle.innerHTML = pals[selectedPal].title;
 		palDescription.innerHTML = pals[selectedPal].description;
 		pal.classList.add('revealed');
@@ -135,7 +136,7 @@ if (submit) {
 		let selectedPal = whichPal();
 
 		gift.classList.add('revealed');
-		palImage.style.backgroundImage = 'url('+pals[selectedPal].image+')';
+		palImage.setAttribute('src',pals[selectedPal].image);
 		palTitle.innerHTML = pals[selectedPal].title;
 		palDescription.innerHTML = pals[selectedPal].description;
 		pal.classList.add('revealed');
