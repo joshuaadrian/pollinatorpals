@@ -102,7 +102,8 @@ body {
 }
 
 body > * {
-	max-width: 700px;
+	max-width: 900px;
+	width:100%;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -134,8 +135,8 @@ h2 {
 .form-wrap {
 	margin-top:1.5em;
 	padding:1em;
-	border-radius: 16px;
-	border-image:linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.5)) fill 1;
+	border-radius: 10px;
+	background:white;
 }
 
 form {
@@ -144,8 +145,8 @@ form {
 
 .form-tab.form-checks {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px 20px;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px 10px;
 }
 
 @media(max-width:700px) {
@@ -157,13 +158,23 @@ form {
 }
 
 .form-tab.form-checks h2 {
-	grid-column: 1 / span 2;
+	grid-column: 1 / span 3;
 }
 
 .form-check {
 	position: relative;
 	overflow: hidden;
+	margin:0;
+	height:100%;
+}
+
+@media(max-width:700px) {
+
+	.form-check {
 	margin:0 0 0.5em;
+	height:auto;
+}
+
 }
 
 .form-check input {
@@ -176,13 +187,14 @@ form {
 
 .form-check label {
 	color:#111;
-	font-size:0.9em;
+	font-size:0.8em;
 	padding:0.65em 0.85em;
 	display: block;
 	border:2px solid #ccc;
-	border-radius: 10px;
+	border-radius: 5px;
 	background:#f5f5f5;
 	cursor: pointer;
+	height:100%;
 }
 
 .form-check input:checked + label {
