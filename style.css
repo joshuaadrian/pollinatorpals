@@ -335,7 +335,7 @@ form {
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	position: relative;
-	padding:0 2em;
+	padding:0;
 	margin:1em 0;
 }
 
